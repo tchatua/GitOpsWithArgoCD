@@ -52,6 +52,6 @@ Argo CD and GitOps: Helm, Kustomize, ApplicationSets, Blue/Green, CI/CD, Plugins
 - Advantaged of ArgoCD:
   - Streamlined Deployments
   - Enhanced collaboration
-    = Improve security
+  - Improve security
   - Faster incident response
   - scalability
