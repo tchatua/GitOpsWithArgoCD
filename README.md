@@ -87,10 +87,21 @@ git config --global core.editor "vim" # execute
 
   - Create an SSH key-pair:
 ```sh
-ssh-keygen -t ed25519 -C "chattua@gmail.com"
-eval "$(ssh-agent -s)
+# Generate a new SSH key using the Ed25519 algorithm with an email label
+ssh-keygen -t ed25519 -C "tchattua@gmail.com"
+
+# Start the ssh-agent in the current shell session so it can manage SSH keys
+eval "$(ssh-agent -s)"
+
+# Add the newly created private key to the ssh-agent for automatic authentication
 ssh-add ~/.ssh/id_ed25519
+
+# Display the public key so you can copy it and add it to GitHub, GitLab, or a server
 cat ~/.ssh/id_ed25519.pub
+
+# Copy the output above and paste it into the appropriate settings (GitHub/GitLab/AWS/etc.)
+# The public key is safe to share, but NEVER share your private key (~/.ssh/id_ed25519)
+
 # Copy the contents of the key
 ```
 
@@ -103,6 +114,7 @@ cat ~/.ssh/id_ed25519.pub
   - Click add key.
 
 ## Kubernetes cluster setup on Ubuntu
+
 - Install Docker by running the following commands:
 ```sh
 # Update the list of available packages
@@ -131,10 +143,22 @@ newgrp docker
 
 # Check the installed Docker version (test command)
 docker version
-
 ```
 
+  - Install kubectl by runnig the following command:
 ```sh
+# Download the latest stable version of kubectl for Linux (64-bit).
+# The first curl fetches the latest version number, the second downloads the binary.
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+# Move the downloaded kubectl binary into /usr/local/bin so it is available system-wide
+sudo mv kubectl /usr/local/bin
+
+# Make the kubectl binary executable
+sudo chmod +x /usr/local/bin/kubectl
+
+# Verify that kubectl is installed correctly and show the client version
+kubectl version --client
 
 ```
 
