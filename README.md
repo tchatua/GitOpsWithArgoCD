@@ -159,10 +159,23 @@ sudo chmod +x /usr/local/bin/kubectl
 
 # Verify that kubectl is installed correctly and show the client version
 kubectl version --client
-
 ```
 
+  - Go to https://github.com/kubernetes-sigs/kind/releases
+  - Scroll down till you find the downloadable files.
+  - Right click on the Linux AMD64 and copy the link.
+  - In the terminal, run the following:
+
 ```sh
+# Download the Kind (Kubernetes IN Docker) binary for Linux 64-bit, version 0.30.0
+wget https://github.com/kubernetes-sigs/kind/releases/download/v0.30.0/kind-linux-amd64
+# Move the downloaded Kind binary to /usr/local/bin and rename it to "kind"
+sudo mv kind-linux-amd64 /usr/local/bin/kind
+# Make the Kind binary executable
+sudo chmod +x /usr/local/bin/kind
+# Verify that Kind is installed correctly by displaying the installed version
+kind version
+
 
 ```
 
