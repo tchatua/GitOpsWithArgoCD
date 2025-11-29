@@ -68,3 +68,19 @@ Argo CD and GitOps: Helm, Kustomize, ApplicationSets, Blue/Green, CI/CD, Plugins
     - Supports various configuration mangement tools.
     - Enhance Security and Compliance.
     - Facilitates collaboration and transparency.
+
+## Installing and Configuring git
+- Installing and configuring Git with the SSH authentication
+  - On ubuntu:
+```sh
+sudo apt update
+sudo apt install git -y
+git --version
+```
+
+  - onfigure the git user information by running:
+```sh
+git config --global user.name "Arristide Tchatua"
+git config --global user.email "tchattua@gmail.com"
+git config --global core.editor "vim" # execute
+```
