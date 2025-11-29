@@ -84,3 +84,21 @@ git config --global user.name "Arristide Tchatua"
 git config --global user.email "tchattua@gmail.com"
 git config --global core.editor "vim" # execute
 ```
+
+  - Create an SSH key-pair:
+```sh
+ssh-keygen -t ed25519 -C "chattua@gmail.com"
+eval "$(ssh-agent -s)
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+# Copy the contents of the key
+```
+
+  - Navigate to Gitlab.com
+  - Login using SSO.
+  - Click on the profile icon.
+  - Choose preferences.
+  - Choose SSH keys from the left-hand navigation.
+  - Paste the contents of the public key in the box.
+  - Click add key.
+
