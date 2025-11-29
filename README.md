@@ -55,3 +55,16 @@ Argo CD and GitOps: Helm, Kustomize, ApplicationSets, Blue/Green, CI/CD, Plugins
   - Improve security
   - Faster incident response
   - scalability
+
+## GitOps with ArgoCD
+- The benefits to managed K8s based applications using GitOps with ArgoCD:
+    - Tradditional deployment methods often lack the necessary automation, consistency, and reliability needed in modern environments
+    - GitOps relies on Git as a single of truth for declarative infrastructure and provides a clear, version-controlled history of changes.
+
+- **Why Choose argoCD?**
+  - ArgoCD is a popular choice to implement GiytOps workflows because of the following:
+    - specifically design for K8s native
+    - Provide automated deployments (Automatically synchronizes the state of the applications with the desired state defined in my Git repository, reducing manual intervention and human error.)
+    - Supports various configuration mangement tools.
+    - Enhance Security and Compliance.
+    - Facilitates collaboration and transparency.
