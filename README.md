@@ -102,3 +102,43 @@ cat ~/.ssh/id_ed25519.pub
   - Paste the contents of the public key in the box.
   - Click add key.
 
+## Kubernetes cluster setup on Ubuntu
+- Install Docker by running the following commands:
+```sh
+# Update the list of available packages
+sudo apt-get update
+
+# Install required dependencies for using HTTPS repositories
+sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+# Download and add Docker’s official GPG key (used to verify package integrity)
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# Add the official Docker repository for Ubuntu (automatically detects your Ubuntu version)
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Update package lists again after adding the Docker repository
+sudo apt-get update
+
+# Install Docker Engine (docker-ce), Docker CLI, and containerd runtime
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+# Add the current user to the 'docker' group so Docker can be run without sudo
+sudo usermod -aG docker ${USER}
+
+# Refresh the group membership without needing to reboot or log out
+newgrp docker
+
+# Check the installed Docker version (test command)
+docker version
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+

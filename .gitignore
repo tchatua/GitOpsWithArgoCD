@@ -1,1 +1,5 @@
 a01_Git_Push.sh
+a02_Ubuntu_K8s_Cluster_Server/terraform.tfstate
+a02_Ubuntu_K8s_Cluster_Server/terraform.tfstate.backup
+a02_Ubuntu_K8s_Cluster_Server/.terraform
+a02_Ubuntu_K8s_Cluster_Server/.terraform.lock.hcl
