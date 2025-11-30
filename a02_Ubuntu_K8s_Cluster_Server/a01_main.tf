@@ -46,13 +46,53 @@ resource "aws_security_group" "ssh_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["173.61.6.206/32"]
   }
 
   ingress {
     description = "HTTP"
     from_port   = 80
     to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTP"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTP"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTP"
+    from_port   = 6443
+    to_port     = 6443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTP"
+    from_port   = 8443
+    to_port     = 8443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTP"
+    from_port   = 41527
+    to_port     = 41527
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -76,42 +116,42 @@ resource "aws_instance" "ubuntu" {
   key_name               = aws_key_pair.deployer.key_name
   vpc_security_group_ids = [aws_security_group.ssh_sg.id]
 
-  # Optional user-data to run on first boot (cloud-init)
-  user_data = <<-EOF
-              #!/bin/bash
-              # ##################################################
-              # ##################################################
-              apt-get update
-              apt-get -y upgrade
-              # Example: install nginx
-              apt-get -y install nginx
-              systemctl enable nginx
-              systemctl start nginx
-              # ##################################################
-              # ##################################################
-              # Kubernetes cluster setup on Ubuntu
-              # Install Docker by running the following commands:
-              # Update the list of available packages
-              sudo apt-get update
-              # Install required dependencies for using HTTPS repositories
-              sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-              # Download and add Docker’s official GPG key (used to verify package integrity)
-              curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-              # Add the official Docker repository for Ubuntu (automatically detects your Ubuntu version)
-              sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-              # Update package lists again after adding the Docker repository
-              sudo apt-get update
-              # Install Docker Engine (docker-ce), Docker CLI, and containerd runtime
-              sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-              # Add the current user to the 'docker' group so Docker can be run without sudo
-              sudo usermod -aG docker ${USER}
-              # Refresh the group membership without needing to reboot or log out
-              newgrp docker
-              # Check the installed Docker version (test command)
-              docker version
-              # ##################################################
-              # ##################################################              
-              EOF
+  # # Optional user-data to run on first boot (cloud-init)
+  # user_data = <<-EOF
+  #             #!/bin/bash
+  #             # # # ##################################################
+  #             # # # ##################################################
+  #             # # apt-get update
+  #             # # apt-get -y upgrade
+  #             # # # Example: install nginx
+  #             # # apt-get -y install nginx
+  #             # # systemctl enable nginx
+  #             # # systemctl start nginx
+  #             # # ##################################################
+  #             # # ##################################################
+  #             # # Kubernetes cluster setup on Ubuntu
+  #             # # Install Docker by running the following commands:
+  #             # # Update the list of available packages
+  #             # sudo apt-get update
+  #             # # Install required dependencies for using HTTPS repositories
+  #             # sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+  #             # # Download and add Docker’s official GPG key (used to verify package integrity)
+  #             # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  #             # # Add the official Docker repository for Ubuntu (automatically detects your Ubuntu version)
+  #             # sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  #             # # Update package lists again after adding the Docker repository
+  #             # sudo apt-get update
+  #             # # Install Docker Engine (docker-ce), Docker CLI, and containerd runtime
+  #             # sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+  #             # # Add the current user to the 'docker' group so Docker can be run without sudo
+  #             # sudo usermod -aG docker ${USER}
+  #             # # Refresh the group membership without needing to reboot or log out
+  #             # newgrp docker
+  #             # # Check the installed Docker version (test command)
+  #             # docker version
+  #             # # ##################################################
+  #             # # ##################################################              
+  #             EOF
 
   tags = {
     Name = var.vm_name
