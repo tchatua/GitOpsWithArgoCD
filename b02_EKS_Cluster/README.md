@@ -2,7 +2,7 @@
 
 ## EKS Architecture
 
-![alt text](./a01_Images/image.png)
+![alt text](../a01_Images/image.png)
 
 - **Initialize Terraform**
 ```sh
