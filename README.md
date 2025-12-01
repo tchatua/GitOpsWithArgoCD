@@ -38,10 +38,10 @@ Argo CD is a GitOps continuous delivery tool that automatically syncs Kubernetes
 - **Ingress**:	Manages external HTTP/HTTPS access to applications through rules and an ingress controller.
 - **CRD**: (Custom Resource Definition)	Extends Kubernetes with new resource types used by tools like Argo CD, Helm, and operators.
 
-[Go to B01 EKS Architecture and Terraform Code](./b01/README.md)
+[Go to B01 EKS Architecture and Terraform Code](./b01_EKS/README.md)
 
 ![alt text](./a03_Images/image-3.png)
 
-[Go to B02 EKS Architecture and Terraform Code](./b02/README.md)
+[Go to B02 EKS Architecture and Terraform Code](./b02_EKS_Cluster/README.md)
 
 
