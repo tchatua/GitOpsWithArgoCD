@@ -9,3 +9,4 @@ a01_Git_Push.sh
 .terraform.lock.hcl
 
 *a02_outputs.sh
+*argocd
