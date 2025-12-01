@@ -42,6 +42,13 @@ module "eks" {
     }
   }
 
+  # Enables public API endpoint (so I can run kubectl locally)
+  cluster_endpoint_public_access = true
+  # Keeps private endpoint active (recommended)
+  cluster_endpoint_private_access = true # optional: keep both enabled
+#   manage_aws_auth = true  # <--- this ensures your IAM user is added
+
+
   tags = {
     # Environment = "test"
     Environment = var.environment

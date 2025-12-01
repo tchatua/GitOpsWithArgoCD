@@ -1,0 +1,6 @@
+{
+  "data": {
+    "mapUsers": "  - userarn: arn:aws:iam::088354478627:user/terraform\n    username: terraform\n    groups:\n      - system:masters\n",
+    "mapRoles": "  - rolearn: arn:aws:iam::088354478627:role/default-eks-node-group-20251130192740305200000001\n    username: system:node:{{EC2PrivateDNSName}}\n    groups:\n      - system:bootstrappers\n      - system:nodes\n"
+  }
+}

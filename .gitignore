@@ -1,8 +1,11 @@
 # Ignore shell scripts
 a01_Git_Push.sh
+*aws_cli.sh
 
 # Ignore Terraform state & lock files globally
 *.tfstate
 *.tfstate.backup
 .terraform/
 .terraform.lock.hcl
+
+*a02_outputs.sh

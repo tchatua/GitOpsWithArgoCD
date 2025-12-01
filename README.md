@@ -42,3 +42,6 @@ Argo CD is a GitOps continuous delivery tool that automatically syncs Kubernetes
 
 ![alt text](./a03_Images/image-3.png)
 
+[Go to B02 EKS Architecture and Terraform Code](./b02/README.md)
+
+

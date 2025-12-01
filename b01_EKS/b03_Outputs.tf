@@ -28,7 +28,7 @@ output "cluster_ca_certificate" {
 
 output "kubectl_config" {
   description = "Kubeconfig content to access EKS cluster"
-  value = <<EOF
+  value       = <<EOF
 apiVersion: v1
 clusters:
 - cluster:
@@ -54,6 +54,6 @@ users:
         - "--cluster-name"
         - "${module.eks.cluster_name}"
 EOF
-  sensitive = true
+  sensitive   = true
 }
 
