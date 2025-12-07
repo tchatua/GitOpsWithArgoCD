@@ -41,7 +41,25 @@ Argo CD is a GitOps continuous delivery tool that automatically syncs Kubernetes
 
 [Go to B01 EKS Architecture and Terraform Code](./b01_EKS/README.md)
 
+## What is kubernetes?
+- Kubernetes is an **open-source container orchestration tool used for managing containerized applications** and it can easily scale and identify faults in container.
+- K8s provides some generally applicable features common to PaaS offerings. Such as:
+  - Deployments
+  - Scaling
+  - Load balancing
+  - Let users integrate their logging
+  - Monitoring
+  - And altering solutions
+- K8s comprises a set of independent, composable processes that continuously drive the current state towardsa the provided desired state
+- K8s aims to support different type of workloads such as:
+  - Stateless, 
+  - Stateful 
+  - And data processing workloads
+  - ...
+
 ![alt text](./a03_Images/image-3.png)
+![alt text](./a03_Images/image-5.png)
+![alt text](./a03_Images/image-6.png)
 
 [Go to B02 EKS Architecture and Terraform Code](./b02_EKS_Cluster/README.md)
 
