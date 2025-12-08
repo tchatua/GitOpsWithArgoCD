@@ -1,5 +1,11 @@
 # Install Argo Rollouts
 
+```
+Argo rollout is a Kubernetes controller and set of Custom Resource Definitions (CRD) that enable advanced deploynent strategies like Canary and Blue-Green. 
+Unlike standard K8s deployments, which use a RollingUpdate strategy, Argo rollouts provide fine-gained control over traffic shifting and automated rollback based on metrics analysis.
+In a Canary deployment, a new version of the application is gradually rolled out to a subnet of users, allowing me to monitor its performance before fully promoting it.
+```
+
 1. create namespace for argo- rollouts
 
 ```sh
